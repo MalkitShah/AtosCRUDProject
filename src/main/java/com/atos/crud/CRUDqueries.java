@@ -31,6 +31,39 @@ public class CRUDqueries {
 	
 	
 	}
+	
+	// running queries through CLI 
+	// Create Queries 
+	
+	public void create(String title, String first_name, String last_name, int phone_number, String postcode) {
+		/*
+		String title = "Mr";
+		String first_name = "Malkit";
+		String last_name = "Shah";
+		int phone_number = 12234;
+		String postcode = "UB56JR";
+	*/
+		String createstatement = "INSERT INTO CUSTOMER(title, first_name, last_name, phone_number, postcode) VALUES('"+title+"','"+first_name+"','"+last_name+"',"+phone_number+",'"+postcode+"');";  
+		
+		try { 
+			statement.executeUpdate(createstatement);
+			System.out.println("Your create statement has been executed!");
+		}
+		catch(SQLException e) {
+			System.out.println("Your statement could not be executed");
+			e.printStackTrace();
+		}
+		
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 	//Close the connection to the DB
 	public void closeConnect() {
 		try { 
