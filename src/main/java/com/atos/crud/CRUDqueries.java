@@ -58,6 +58,19 @@ public class CRUDqueries {
 	}
 	
 	
+	// -- SELECT from DB command
+	public void read() {
+		
+		
+	}
+	
+	// --UPDATE from DB command
+	public void update() {
+		
+		
+	}
+	
+	
 	
 	
 	
