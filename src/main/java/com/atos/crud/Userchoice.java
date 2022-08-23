@@ -36,15 +36,23 @@ public class Userchoice {
 					query.create(title, first_name, last_name, phone_number, postcode);
 					break;
 				case "read":
-					
+					query.read();
 					break;
 					
 				case "update":
-					
+					System.out.println("Please enter ID of record you wish to update");
+					int id = readi.nextInt();
+					readi.nextLine();
+					System.out.println("Please enter the first name you wish to update the field to");
+					String newname = readi.nextLine();
+					query.update(id, newname);
 					break;
 				
 				case "delete":
-					
+					System.out.println("Enter id of the record you wish to delete ");
+					int id1 = readi.nextInt();
+					readi.nextLine();
+					query.delete(id1);
 					break;
 					
 				default:

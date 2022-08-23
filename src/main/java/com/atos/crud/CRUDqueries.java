@@ -3,7 +3,10 @@ package com.atos.crud;
 import java.sql.Connection;
 import java.sql.Statement;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+
 public class CRUDqueries {
 	/*
 	  	This is the class that will be carrying out the CRUD queries - where we will be connecting to the database 
@@ -15,6 +18,7 @@ public class CRUDqueries {
 	 */
 	private Connection connect;
 	private Statement statement;
+	private ResultSet rst;
 	
 	//Open connection within the constructor - initiliase everything
 	public CRUDqueries() {
@@ -60,16 +64,49 @@ public class CRUDqueries {
 	
 	// -- SELECT from DB command
 	public void read() {
-		
+		String readstatement = "SELECT * FROM CUSTOMER";
+		try {
+			rst = statement.executeQuery(readstatement);
+			while(rst.next()) {
+				System.out.println("ID: " + rst.getInt("id"));
+				System.out.println("Title: " + rst.getString("title"));
+				System.out.println("First Name: " + rst.getString("first_name"));
+				System.out.println("Last Name: " + rst.getString("last_name"));
+				System.out.println("Phone Number: " + rst.getInt("phone_number"));
+				System.out.println("Postcode: " + rst.getString("postcode"));
+			}
+			
+			
+		}catch(SQLException e){
+			System.out.println("Bad Query");
+			e.printStackTrace();
+			
+		}
 		
 	}
 	
 	// --UPDATE from DB command
-	public void update() {
-		
-		
+	public void update(int id, String updateVal) {
+		String updatestatement = "UPDATE CUSTOMER SET first_name = '" +updateVal+ "' WHERE id = " + id + ";";
+		try {
+			statement.executeUpdate(updatestatement);
+			System.out.println("Statement has been updated accordingly");
+		} catch(SQLException e) {
+			System.out.println("Bad Input");
+			e.printStackTrace();
+		}
 	}
 	
+	public void delete(int id) {
+		String delStatement = "DELETE FROM CUSTOMER WHERE id = "+id+";";
+		try {
+			statement.executeUpdate(delStatement);
+			System.out.println("The data has been deleted for the specified ID");
+		} catch(SQLException e) {
+			System.out.println("Bad query");
+			e.printStackTrace();
+		}
+	}
 	
 	
 	
