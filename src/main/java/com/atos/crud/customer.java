@@ -26,8 +26,6 @@ public class customer {
 	
 	
 	
-	
-	
 	public customer(String title, String first_name, String last_name, int phone_number, String postcode) {
 		super();
 		this.title = title;
