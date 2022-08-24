@@ -3,7 +3,7 @@ package com.atos.crud;
 import java.util.Scanner;
 
 public class Userchoice {
-	
+	customer cust;
 	private static Scanner readi = new Scanner(System.in);
 	
 	public String getInput() {

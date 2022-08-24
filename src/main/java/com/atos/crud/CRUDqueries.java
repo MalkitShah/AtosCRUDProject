@@ -15,6 +15,8 @@ public class CRUDqueries {
 	 	2) Write your query
 	 	3) Execute the query
 	 	4) Close the connection
+	 	
+	 	
 	 */
 	private Connection connect;
 	private Statement statement;
@@ -40,13 +42,7 @@ public class CRUDqueries {
 	// Create Queries 
 	
 	public void create(String title, String first_name, String last_name, int phone_number, String postcode) {
-		/*
-		String title = "Mr";
-		String first_name = "Malkit";
-		String last_name = "Shah";
-		int phone_number = 12234;
-		String postcode = "UB56JR";
-	*/
+
 		String createstatement = "INSERT INTO CUSTOMER(title, first_name, last_name, phone_number, postcode) VALUES('"+title+"','"+first_name+"','"+last_name+"',"+phone_number+",'"+postcode+"');";  
 		
 		try { 
@@ -107,10 +103,6 @@ public class CRUDqueries {
 			e.printStackTrace();
 		}
 	}
-	
-	
-	
-	
 	
 	
 	

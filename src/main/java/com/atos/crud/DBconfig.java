@@ -1,7 +1,7 @@
 package com.atos.crud;
 
 public class DBconfig {
-	/* In order to connect to the database, we will need 3 things : 
+	/* In order to connect to the database, we need 3 things : 
 	 	1)URL
 	 	2) username
 	 	3) password
