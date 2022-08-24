@@ -9,10 +9,8 @@ phone_number INT NOT NULL,
 postcode VARCHAR(20) NOT NULL,
 primary key(id));
 
+DESCRIBE CUSTOMER;
+select * FROM CUSTOMER;
 
 
 
-
-
-
-)
